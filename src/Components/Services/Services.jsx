@@ -6,16 +6,21 @@ import Humble from '../../img/humble.png'
 import Card from '../Card/Card'
 import CV from './Atmagyan_Singh_7309085383.pdf'
 
+import { themeContext } from '../../Context'
+import { useContext } from 'react'
+
 
 const Services = () => {
+	const theme = useContext(themeContext);
+	const darkMode = theme.state.darkMode;
 	return (
 		<section id="services">
 			<div className="services">
 				{/*Left Side*/}
 				<div className="awesome">
-					 <span>My Awesome</span>
+					 <span style={{color: darkMode?'white':''}}>My Awesome</span>
 					 <span>Services</span>
-					 <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, minus.<br/>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, assumenda.</span>
+					 <span style={{color: darkMode?'white':''}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, minus.<br/>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, assumenda.</span>
 					 <a href={CV} download>
 						 <button className="button s-button">Download CV</button>
 					 </a>

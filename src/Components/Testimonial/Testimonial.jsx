@@ -10,6 +10,9 @@ import profilePic2 from "../../img/profile2.jpg"
 import profilePic3 from "../../img/profile3.jpg"
 import profilePic4 from "../../img/profile4.jpg"
 
+import { themeContext } from '../../Context'
+import { useContext } from 'react'
+
 const Testimonial = () => {
 
 	const clients = [
@@ -30,6 +33,9 @@ const Testimonial = () => {
 			review: "Incididunt sit enim enim in commodo tempor magna pariatur exercitation ea non occaecat elit ullamco non labore cillum in do eu in dolor esse deserunt ut aute consequat in officia in id.",
 		}
 	]
+
+	const theme = useContext(themeContext);
+	const darkMode = theme.state.darkMode;
 
 	return (
 		<section id="testimonials">
@@ -52,7 +58,7 @@ const Testimonial = () => {
 							<SwiperSlide key={index}>
 								<div className="testimonial">
 									<img src={client.img} alt="" />
-									<span>{client.review}</span>
+									<span style={{color: darkMode ? '#d8dee9':''}}>{client.review}</span>
 								</div>
 							</SwiperSlide>
 						);

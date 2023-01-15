@@ -8,14 +8,20 @@ import HOC from '../../img/hoc.png'
 import MusicApp from '../../img/musicapp.png'
 
 
+import { themeContext } from '../../Context'
+import { useContext } from 'react'
+
+
 import './Portfolio.css'
 
 const Portfolio = () => {
+	const theme = useContext(themeContext);
+	const darkMode = theme.state.darkMode;
 	return (
 		<section id="portfolio">
 			<div className="portfolio">
 				{/*Heading*/}
-				<span>Recent Projects</span>
+				<span style={{color: darkMode ? 'white':''}}>Recent Projects</span>
 				<span>Portfolio</span>
 				{/*Swiper*/}
 				<Swiper

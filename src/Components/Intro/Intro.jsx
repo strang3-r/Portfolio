@@ -12,17 +12,22 @@ import glassesimoji from '../../img/glassesimoji.png'
 
 import FloatingDiv from '../FloatingDiv/FloatingDiv'
 
+import { themeContext } from '../../Context'
+import { useContext } from 'react'
+
 import './Intro.css'
 
 const Intro = () => {
+	const theme = useContext(themeContext);
+	const darkMode = theme.state.darkMode;
 	return (
 		<section id="#">
 			<div className="intro">
 				<div className="i-left">
 					<div className="i-name">
-						<span>Hey! I Am</span>
+						<span style={{color: darkMode?'white':''}}>Hey! I Am</span>
 						<span>Atmagyan Singh</span>
-						<span>
+						<span style={{color: darkMode?'white':''}}>
 							MERN Stack Developer with high level of experience in web designing and development, producting the Quality work.
 						</span>
 					</div>
